@@ -26,10 +26,7 @@ startButton.addEventListener("click", function() {
 
 function timerCountdown() {
     const timer = document.getElementById("time");
-    // console.log(timer)
-
-    var timeLeft = 75;
-
+    // console.log(timer)    
     var timeDeduct = setInterval(function() {
         if (timeLeft > 0) {
             timer.textContent = timeLeft + ' seconds remaining';
@@ -39,6 +36,7 @@ function timerCountdown() {
             clearInterval(timeDeduct);
             console.log("Time is up - switch to end-screen!") 
         }
+        console.log(timeLeft);
     }, 1000);
 }
 
@@ -76,7 +74,7 @@ function checkAnswer(choices, correctanswer) {
             console.log("Correct Answer!");
         } else {
             console.log("Wrong!");
-            penalty = timeLeft - 10;
+            timeLeft -= 10;
         }  
     });
 
@@ -85,6 +83,7 @@ function checkAnswer(choices, correctanswer) {
             console.log("Correct Answer!");
         } else {
             console.log("Wrong!");
+            timeLeft -= 10;
         }  
     });
 
@@ -93,6 +92,7 @@ function checkAnswer(choices, correctanswer) {
             console.log("Correct Answer!");
         } else {
             console.log("Wrong!");
+            timeLeft -= 10;
         }  
     });
 
@@ -101,7 +101,8 @@ function checkAnswer(choices, correctanswer) {
             console.log("Correct Answer!");
         } else {
             console.log("Wrong!");
-        }  
+            timeLeft -= 10;
+        }
     });
 }
 
