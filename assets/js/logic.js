@@ -2,6 +2,7 @@ var startButton = document.querySelector("#start");
 var questionsDisplay = document.querySelector("#questions");
 var currentQuestionIndex = 0;
 var timeLeft = 75;
+var score = 0;
 
 startButton.addEventListener("click", function() {
     timerCountdown();
@@ -72,6 +73,9 @@ function checkAnswer(choices, correctanswer) {
     firstAnswer.addEventListener("click", function(){
         if (parseInt(firstAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
             console.log("Correct Answer!");
+            console.log("Score: " + score);
+            score += 1;
+            console.log("Score: " + score);
         } else {
             console.log("Wrong!");
             timeLeft -= 10;
@@ -81,6 +85,9 @@ function checkAnswer(choices, correctanswer) {
     secondAnswer.addEventListener("click", function(){
         if (parseInt(secondAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
             console.log("Correct Answer!");
+            console.log("Score: " + score);
+            score += 1;
+            console.log("Score: " + score);
         } else {
             console.log("Wrong!");
             timeLeft -= 10;
@@ -90,6 +97,9 @@ function checkAnswer(choices, correctanswer) {
     thirdAnswer.addEventListener("click", function(){
         if (parseInt(thirdAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
             console.log("Correct Answer!");
+            console.log("Score: " + score);
+            score += 1;
+            console.log("Score: " + score);
         } else {
             console.log("Wrong!");
             timeLeft -= 10;
@@ -99,6 +109,9 @@ function checkAnswer(choices, correctanswer) {
     fourthAnswer.addEventListener("click", function(){
         if (parseInt(fourthAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
             console.log("Correct Answer!");
+            console.log("Score: " + score);
+            score += 1;
+            console.log("Score: " + score);
         } else {
             console.log("Wrong!");
             timeLeft -= 10;
