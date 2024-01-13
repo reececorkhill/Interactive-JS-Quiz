@@ -21,6 +21,7 @@ startButton.addEventListener("click", function() {
     // showQuestionsAndAnswers (questionsAndAnswers[currentQuestionIndex]);
     // displayAnswers(questionsAndAnswers[currentQuestionIndex]);
     // displayCorrectAnswer(questionsAndAnswers[currentQuestionIndex]);
+    checkAnswer(questionsAndAnswers[currentQuestionIndex].answerChoices, questionsAndAnswers[currentQuestionIndex].correctChoice);
 });
 
 function timerCountdown() {
@@ -52,7 +53,7 @@ function showQuestionsAndAnswers (time, test) {
 
     if (time > 0) {
         currentQuestion.textContent = test.question;
-        console.log(test.answerChoices)
+        // console.log(test.answerChoices)
         firstAnswer.textContent = test.answerChoices[0];
         secondAnswer.textContent = test.answerChoices[1];
         thirdAnswer.textContent = test.answerChoices[2];
@@ -60,6 +61,48 @@ function showQuestionsAndAnswers (time, test) {
       } else {
         console.log("Test Log")
     };
+}
+
+function checkAnswer(choices, correctanswer) {
+    const firstAnswer = document.getElementById("answer-1");
+    const secondAnswer = document.getElementById("answer-2");
+    const thirdAnswer = document.getElementById("answer-3");
+    const fourthAnswer = document.getElementById("answer-4");
+
+    console.log(choices);
+    console.log(correctanswer);
+    firstAnswer.addEventListener("click", function(){
+        if (parseInt(firstAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
+            console.log("Correct Answer!");
+        } else {
+            console.log("Wrong!");
+            penalty = timeLeft - 10;
+        }  
+    });
+
+    secondAnswer.addEventListener("click", function(){
+        if (parseInt(secondAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
+            console.log("Correct Answer!");
+        } else {
+            console.log("Wrong!");
+        }  
+    });
+
+    thirdAnswer.addEventListener("click", function(){
+        if (parseInt(thirdAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
+            console.log("Correct Answer!");
+        } else {
+            console.log("Wrong!");
+        }  
+    });
+
+    fourthAnswer.addEventListener("click", function(){
+        if (parseInt(fourthAnswer.getAttribute("data-index")) === choices.indexOf(correctanswer)) {
+            console.log("Correct Answer!");
+        } else {
+            console.log("Wrong!");
+        }  
+    });
 }
 
 function displayAnswers(test) {
