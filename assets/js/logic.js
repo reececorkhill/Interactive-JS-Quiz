@@ -25,7 +25,7 @@ function startTheQuiz() {
 }
 
 function timerCountdown() {
-    const timer = document.getElementById("time");   
+    const timer = document.getElementById("time");
     var timeDeduct = setInterval(function() {
         if (timeLeft > 0) {
             timer.textContent = timeLeft + ' seconds remaining';
@@ -35,10 +35,12 @@ function timerCountdown() {
             clearInterval(timeDeduct);
             console.log("Time is up - switch to end-screen!") 
         }
+        // console.log(timeLeft);
     }, 1000);
 }
 
 function showQuestionsAndAnswers (time, test) {
+
     if (currentQuestionIndex+1 > questionsAndAnswers.length) return;
     const currentQuestion = document.getElementById("question-title");
     const firstAnswer = document.getElementById("answer-1");
