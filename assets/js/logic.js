@@ -39,19 +39,15 @@ function timerCountdown() {
         } else {
             clearInterval(timeDeduct);
             endTheQuiz();
-            console.log("Test")
         };
     }, 1000);
 }
 
 function showQuestionsAndAnswers (time, test) {
 
-    if (currentQuestionIndex+1 > questionsAndAnswers.length) return;
     const currentQuestion = document.getElementById("question-title");
-    const firstAnswer = document.getElementById("answer-1");
-    const secondAnswer = document.getElementById("answer-2");
-    const thirdAnswer = document.getElementById("answer-3");
-    const fourthAnswer = document.getElementById("answer-4");
+
+    if (currentQuestionIndex+1 > questionsAndAnswers.length) return;
 
     if (time > 0) {
         currentQuestion.textContent = test.question;
@@ -102,11 +98,3 @@ function endTheQuiz () {
         timer.textContent = "Quiz Finished!";
     }, 700);
 }
-
-// function displayAnswers(test) {
-//     console.log(test.answerChoices);
-// }
-
-// function displayCorrectAnswer(test) {
-//     console.log(test.correctChoice);
-// }
