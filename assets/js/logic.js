@@ -3,7 +3,9 @@ var questionsDisplay = document.querySelector("#questions");
 var currentQuestionIndex = 0;
 var timeLeft = 75;
 var score = 0;
+var quizEnded = false;
 
+const timer = document.getElementById("time");
 const firstAnswer = document.getElementById("answer-1");
 const secondAnswer = document.getElementById("answer-2");
 const thirdAnswer = document.getElementById("answer-3");
@@ -25,17 +27,20 @@ function startTheQuiz() {
 }
 
 function timerCountdown() {
-    const timer = document.getElementById("time");
     var timeDeduct = setInterval(function() {
+
+        if (quizEnded === true) {
+            clearInterval(timeDeduct);
+        };
+
         if (timeLeft > 0) {
             timer.textContent = timeLeft + ' seconds remaining';
             timeLeft--;
         } else {
-            timer.textContent = "Quiz Finished!";
             clearInterval(timeDeduct);
-            console.log("Time is up - switch to end-screen!") 
-        }
-        // console.log(timeLeft);
+            endTheQuiz();
+            console.log("Test")
+        };
     }, 1000);
 }
 
@@ -72,8 +77,30 @@ function checkAnswer(event) {
         showFeedback.textContent = "Wrong!";
         timeLeft -= 10; 
     };
+
+    if (score >= 20 ) {
+        endTheQuiz();
+    }
+
     currentQuestionIndex++;
     showQuestionsAndAnswers (timeLeft, questionsAndAnswers[currentQuestionIndex]);
+}
+
+function endTheQuiz () {
+    const questionDiv = document.getElementById("questions");
+    questionDiv.classList.add("hide");
+    const endScreen = document.getElementById("end-screen");
+    endScreen.classList.remove("hide");
+    const feedbackDiv = document.getElementById("feedback");
+    feedbackDiv.classList.add("hide");
+
+    const finalScoreSpan = document.getElementById("final-score");
+    finalScoreSpan.textContent = score;
+
+    quizEnded = true;
+    setTimeout(function() {
+        timer.textContent = "Quiz Finished!";
+    }, 700);
 }
 
 // function displayAnswers(test) {
