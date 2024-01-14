@@ -8,8 +8,6 @@ var questionsAndAnswers = [
         question: "What kind of language is JavaScript?",
         answerChoices: ["Imperative", "Functional", "Logical", "Object-Oriented"],
         correctChoice: "Object-Oriented"
-<<<<<<< Updated upstream
-=======
     },
     {
         question: "What is the purpose of the let keyword in JavaScript?",
@@ -100,6 +98,5 @@ var questionsAndAnswers = [
         question: "How can you remove the last element from an array in JavaScript?",
         answerChoices: ["array.removeLast()", "array.pop()", "array.splice(-1, 1)", "array.slice(-1)"],
         correctChoice: "array.pop()"
->>>>>>> Stashed changes
     }
 ];
