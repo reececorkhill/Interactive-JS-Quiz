@@ -19,7 +19,7 @@ fourthAnswer.addEventListener("click", checkAnswer);
 startButton.addEventListener("click", startTheQuiz);
 submitButton.addEventListener("click", saveScore);
 
-function startTheQuiz() {
+function startTheQuiz () {
     timerCountdown();
     const startScreenDisplay = document.getElementById("start-screen");
     startScreenDisplay.remove();
@@ -28,7 +28,7 @@ function startTheQuiz() {
     showQuestionsAndAnswers (timeLeft, questionsAndAnswers[currentQuestionIndex]);
 }
 
-function timerCountdown() {
+function timerCountdown () {
     var timeDeduct = setInterval(function() {
 
         if (quizEnded === true) {
@@ -60,7 +60,7 @@ function showQuestionsAndAnswers (time, test) {
     };
 }
 
-function checkAnswer(event) {
+function checkAnswer (event) {
     const feedbackDiv = document.getElementById("feedback");
     feedbackDiv.classList.remove("hide");
     const showFeedback = document.getElementById("feedback-alert");
@@ -104,6 +104,13 @@ function endTheQuiz () {
 function saveScore () {
     var initialsInput = document.getElementById("initials");
     var initials = initialsInput.value;
-    console.log({initials, score});
-    localStorage.setItem(initials, score);
+    var initialsAndScore = {initials, score};
+    var alreadyExistingScores = JSON.parse(localStorage.getItem("scores"));
+
+    if (!alreadyExistingScores) {
+        alreadyExistingScores = [];
+    };
+
+    var newScores = [...alreadyExistingScores, initialsAndScore];
+    localStorage.setItem("scores", JSON.stringify(newScores));
 }
