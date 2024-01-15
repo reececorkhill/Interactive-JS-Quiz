@@ -10,12 +10,14 @@ const firstAnswer = document.getElementById("answer-1");
 const secondAnswer = document.getElementById("answer-2");
 const thirdAnswer = document.getElementById("answer-3");
 const fourthAnswer = document.getElementById("answer-4");
+const submitButton = document.getElementById("submit");
 
 firstAnswer.addEventListener("click", checkAnswer);
 secondAnswer.addEventListener("click", checkAnswer);
 thirdAnswer.addEventListener("click", checkAnswer);
 fourthAnswer.addEventListener("click", checkAnswer);
 startButton.addEventListener("click", startTheQuiz);
+submitButton.addEventListener("click", saveScore);
 
 function startTheQuiz() {
     timerCountdown();
@@ -97,4 +99,11 @@ function endTheQuiz () {
     setTimeout(function() {
         timer.textContent = "Quiz Finished!";
     }, 700);
+}
+
+function saveScore () {
+    var initialsInput = document.getElementById("initials");
+    var initials = initialsInput.value;
+    console.log({initials, score});
+    localStorage.setItem(initials, score);
 }
