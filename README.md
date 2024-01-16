@@ -21,7 +21,7 @@ N/A
 
 Test your JavaScript knowledge by playing QuizzyJS, a Timed and Interactive JavaScript Quiz - <a href="https://reececorkhill.github.io/Quizzy-JS/"> here</a>!
 
-![Screenshot of RandoPass Gen website.](assets/images/)
+![Screenshot of QuizzyJS Website.](assets/images/)
 
 ## Credits
 
