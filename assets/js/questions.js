@@ -1,3 +1,4 @@
+// Array of objects which contain the question, possible answer choices and the correct answer choice.
 var questionsAndAnswers = [
     {
         question: "What is the abbreviation for JavaScript?",
