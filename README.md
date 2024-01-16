@@ -1,4 +1,4 @@
-# Interactive-JS-Quiz
+# QuizzyJS 👨‍💻
 The official repository of QuizzyJS.
 
 QuizzyJS is an Interactive JavaScript Quiz which is timed and designed to test your knowledge.
