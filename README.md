@@ -1,10 +1,15 @@
 # QuizzyJS 👨‍💻
-The official repository of QuizzyJS.
+The official repository of QuizzyJS!
 
 QuizzyJS is an Interactive JavaScript Quiz which is timed and designed to test your knowledge.
 
 ## Description
 
+The aim of this project was to build something which would test my own JavaScript skills and let others test theirs at the same time. By building this using JavaScript I've been able to develop my skills and adopt a new mindset when it comes to problem solving.
+
+The problems faced in this project varied from making the application function like an actual quiz, with a timer and a limited amount of questions to, making the application interactive and error free. The solution to the problems throughout this project was a very simple one; writing in-depth pseudocode to breakdown each element of the project one by one, allowing me to work on each part of the applications functionality bit by bit. By breaking down the application into steps, I was able to identify specific functionalities that would make the program work as intended - the choice was to use functions.
+
+Overall, this project has been great to work on and I've learnt alot from developing this.
 
 ## Table of Contents
 
@@ -21,7 +26,12 @@ N/A
 
 Test your JavaScript knowledge by playing QuizzyJS, a Timed and Interactive JavaScript Quiz - <a href="https://reececorkhill.github.io/Quizzy-JS/"> here</a>!
 
-![Screenshot of QuizzyJS Website.](assets/images/)
+![Screenshot of QuizzyJS Starting Page.](assets/images/StartingPage.png)
+![Screenshot of QuizzyJS Question.](assets/images/Question.png)
+![Screenshot of QuizzyJS Question Answered Correctly.](assets/images/AnswerCorrect.png)
+![Screenshot of QuizzyJS Question Answered Incorrectly.](assets/images/AnswerIncorrect.png)
+![Screenshot of QuizzyJS End Page.](assets/images/EndScreen.png)
+![Screenshot of QuizzyJS Highscores Page.](assets/images/Highscores.png)
 
 ## Credits
 
